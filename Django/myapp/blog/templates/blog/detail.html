@@ -6,11 +6,12 @@
     <!-- Images of Me -->
     <div class="w3-row-padding w3-padding-16" id="about">
         <div class="w3-col m6">
-            <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Me" style="width:100%">
+            <img src="{{post.img_url}}" alt="Me" style="width:100%">
         </div>
         <div class="w3-col m6">
             <div class="w3-container w3-padding-large" style="margin-bottom:32px">
                 <h4><b>About the Post {{post.id}}</b></h4>
+                <p class="text-muted">Post on {{post.created_at|date:"F j, Y"}}<p>
                 <p>{{post.content}}</p>
                 <hr>
         

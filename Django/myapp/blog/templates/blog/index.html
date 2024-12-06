@@ -8,11 +8,11 @@
         {% if posts %}
         {% for post in posts %}
         <div class="w3-third w3-container w3-margin-bottom">
-            <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Norway" style="width:100%"
+            <img src="{{post.img_url}}" alt="Norway" style="width:100%"
                 class="w3-hover-opacity">
             <div class="w3-container w3-white">
                 <p><b>{{ post.title }}</b></p>
-                <p>{{ post.content }} <a href="{% url "blog:detail" post_id=post.id %}">Read More</a></p>
+                <p>{{ post.content|truncatechars:50 }} <a href="{% url 'blog_detail' slug=post.slug %}">Read More</a></p>
             </div>
         </div>
         {% endfor %}
