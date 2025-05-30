@@ -7,30 +7,31 @@
         <h5 class="mb-0">Edit Item Details</h5>
       </div>
       <div class="card-body">
-        <form>
+        <form  method='post' >
+          {% csrf_token %}
           <!-- Title -->
           <div class="mb-3">
             <label for="itemTitle" class="form-label">Item Title</label>
-            <input type="text" class="form-control" id="itemTitle" placeholder="Enter item name">
+            <input type="text" class="form-control" name="itemTitle" id="itemTitle"  placeholder="Enter item name" required>
           </div>
 
           <!-- Description -->
           <div class="mb-3">
             <label for="itemDescription" class="form-label">Description</label>
-            <textarea class="form-control" id="itemDescription" rows="3" placeholder="Enter item description"></textarea>
+            <textarea class="form-control" name="itemDescription" id="itemDescription" rows="3" placeholder="Enter item description" required></textarea>
           </div>
 
           <!-- Price -->
           <div class="mb-3">
             <label for="itemPrice" class="form-label">Price</label>
-            <input type="number" class="form-control" id="itemPrice" placeholder="Enter price">
+            <input type="number" class="form-control" name="itemPrice" id="itemPrice" placeholder="Enter price" required>
           </div>
 
           <!-- Image Upload -->
-          <div class="mb-3">
+          {% comment %} <div class="mb-3">
             <label for="itemImage" class="form-label">Upload Image</label>
             <input class="form-control" type="file" id="itemImage">
-          </div>
+          </div> {% endcomment %}
 
           <!-- Submit Button -->
           <button type="submit" class="btn btn-success">Save Changes</button>

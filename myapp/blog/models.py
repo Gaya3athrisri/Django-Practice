@@ -7,5 +7,10 @@ class Members(models.Model):
 # Create your models here.
 
 class Blog(models.Model):
-    item_tittle =models.CharField(max_length=50)
-    item_discription = models.TextFeild()
+    tittle =models.CharField(max_length=50)
+    discription = models.TextField()
+    price =models.DecimalField(max_digits=10,decimal_places=2)
+    
+
+    def __str(self):
+        return self.tittle
